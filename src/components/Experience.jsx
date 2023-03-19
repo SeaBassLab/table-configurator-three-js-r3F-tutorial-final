@@ -1,9 +1,10 @@
 import { OrbitControls, Stage } from "@react-three/drei";
 import { useConfigurator } from "../contexts/Configurator";
 import { Table } from "./Table";
+import { Chair } from "./Chair";
 
 export const Experience = () => {
-  const { legs } = useConfigurator(); // Force rerender the stage & shadows
+  const { model, isDraged } = useConfigurator(); // Force rerender the stage & shadows
   return (
     <>
       <Stage
@@ -17,7 +18,7 @@ export const Experience = () => {
         }}
         adjustCamera={2}
       >
-        <Table />
+        {model ? <Chair /> : <Table />}
       </Stage>
       <OrbitControls
         makeDefault

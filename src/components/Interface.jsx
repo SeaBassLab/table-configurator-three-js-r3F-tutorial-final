@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useConfigurator } from "../contexts/Configurator";
 export const Interface = () => {
-  const { tableWidth, setTableWidth, legs, setLegs, legsColor, setLegsColor } =
+  const { model, setModel, legs, setLegs, legsColor, setLegsColor } =
     useConfigurator();
 
   return (
@@ -27,17 +27,17 @@ export const Interface = () => {
         <Typography variant="caption">Table Configurator</Typography>
         <Box className="glass" p={3}>
           <FormControl>
-            <FormLabel>Table width</FormLabel>
-            <Slider
-              sx={{
-                width: "200px",
+            <FormLabel>Select model</FormLabel>
+            <RadioGroup
+              value={model}
+              onChange={(e) => {
+                setModel(parseInt(e.target.value));
+                setLegs(0);
               }}
-              min={50}
-              max={200}
-              value={tableWidth}
-              onChange={(e) => setTableWidth(e.target.value)}
-              valueLabelDisplay="auto"
-            />
+            >
+              <FormControlLabel value={0} control={<Radio />} label="Table" />
+              <FormControlLabel value={1} control={<Radio />} label="Chair" />
+            </RadioGroup>
           </FormControl>
         </Box>
         <Box className="glass" p={3}>
@@ -53,7 +53,13 @@ export const Interface = () => {
                 label="Standard"
               />
               <FormControlLabel value={1} control={<Radio />} label="Solid" />
-              <FormControlLabel value={2} control={<Radio />} label="Design" />
+              {model ? null : (
+                <FormControlLabel
+                  value={2}
+                  control={<Radio />}
+                  label="Design"
+                />
+              )}
             </RadioGroup>
           </FormControl>
         </Box>
