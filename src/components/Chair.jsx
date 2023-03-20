@@ -62,17 +62,14 @@ export function Chair(props) {
   return (
     <group {...props} dispose={null} rotation-y={Math.PI}>
       <mesh geometry={nodes.Chair.geometry} castShadow>
-        <meshStandardMaterial
-          material={leatherTextureProps}
-          color={"#683434"}
-        />
+        <meshStandardMaterial {...leatherTextureProps} color={"#340f13"} />
       </mesh>
       <mesh
         geometry={nodes.Cushion.geometry}
         position={[0, 0.06, 0.04]}
         castShadow
       >
-        <meshStandardMaterial {...fabricTextureProps} color={"#683434"} />
+        <meshStandardMaterial {...leatherTextureProps} color={"#730710"} />
       </mesh>
       <mesh
         geometry={nodes.Legs1.geometry}
