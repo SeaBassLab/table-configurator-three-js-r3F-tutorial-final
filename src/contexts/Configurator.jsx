@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ConfiguratorContext = createContext();
 
@@ -8,6 +8,8 @@ export const ConfiguratorProvider = ({ children }) => {
   const [tableWidth, setTableWidth] = useState(100);
   const [model, setModel] = useState(0);
   const [isDraged, setIsDraged] = useState(false);
+  const [objSelected, setObjSelected] = useState(null);
+
   return (
     <ConfiguratorContext.Provider
       value={{
@@ -21,6 +23,8 @@ export const ConfiguratorProvider = ({ children }) => {
         setModel,
         isDraged,
         setIsDraged,
+        objSelected,
+        setObjSelected,
       }}
     >
       {children}

@@ -24,7 +24,9 @@ export const Interface = () => {
       p={3}
     >
       <Stack spacing={3}>
-        <Typography variant="caption">Table Configurator</Typography>
+        <Typography variant="caption">
+          {!model ? "Table " : "Chair "}Configurator
+        </Typography>
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Select model</FormLabel>

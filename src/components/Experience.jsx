@@ -4,7 +4,7 @@ import { Table } from "./Table";
 import { Chair } from "./Chair";
 
 export const Experience = () => {
-  const { model, isDraged } = useConfigurator(); // Force rerender the stage & shadows
+  const { model, objSelected } = useConfigurator(); // Force rerender the stage & shadows
   return (
     <>
       <Stage
@@ -20,11 +20,13 @@ export const Experience = () => {
       >
         {model ? <Chair /> : <Table />}
       </Stage>
-      <OrbitControls
-        makeDefault
-        minPolarAngle={0}
-        maxPolarAngle={Math.PI / 2}
-      />
+      {!objSelected && (
+        <OrbitControls
+          makeDefault
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 2}
+        />
+      )}
     </>
   );
 };
