@@ -5,7 +5,6 @@ import {
   FormLabel,
   Radio,
   RadioGroup,
-  Slider,
   Stack,
   Typography,
 } from "@mui/material";
@@ -24,9 +23,7 @@ export const Interface = () => {
       p={3}
     >
       <Stack spacing={3}>
-        <Typography variant="caption">
-          {!model ? "Table " : "Chair "}Configurator
-        </Typography>
+        <Typography>{!model ? "Table " : "Chair "}Configurator</Typography>
         <Box className="glass" p={3}>
           <FormControl>
             <FormLabel>Select model</FormLabel>
