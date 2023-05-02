@@ -1,7 +1,6 @@
 import { OrbitControls, Stage } from "@react-three/drei";
 import { useConfigurator } from "../contexts/Configurator";
-import { Table } from "./Table";
-import { Chair } from "./Chair";
+import { ElectricMediumDuty } from "./models/desks/ElectricMediumDuty";
 import { Loader } from "./Loader";
 import { Suspense } from "react";
 
@@ -20,7 +19,7 @@ export const Experience = () => {
         }}
         adjustCamera={2}
       >
-        {model ? <Chair /> : <Table />}
+        <ElectricMediumDuty />
       </Stage>
       {!objSelected && (
         <OrbitControls
