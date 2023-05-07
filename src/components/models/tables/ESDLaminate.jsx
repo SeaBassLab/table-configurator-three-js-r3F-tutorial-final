@@ -3,6 +3,7 @@ import { useGLTF } from "@react-three/drei";
 
 export function ESDLaminate(props) {
   const { nodes, materials } = useGLTF("./models/ESDLaminate.glb");
+  console.log(nodes, materials);
   return (
     <group {...props} dispose={null}>
       <group scale={0.03}>
