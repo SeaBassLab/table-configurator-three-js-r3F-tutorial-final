@@ -24,7 +24,7 @@ export const ConfiguratorProvider = ({ children }) => {
 
   const MODEL = {
     duty: {
-      name: "Electric Height Adjustable Medium Duty",
+      name: "Electric Duty",
       src: "./models/ElectricMediumDuty.glb",
       imgURL: "./screenshot/ElectricMediumDuty.png",
       visibility: dutyVisibility,
