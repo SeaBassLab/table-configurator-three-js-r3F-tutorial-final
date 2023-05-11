@@ -2,18 +2,9 @@ import { OrbitControls, Stage } from "@react-three/drei";
 import { useConfigurator } from "../contexts/Configurator";
 import { Loader } from "./Loader";
 import { Suspense } from "react";
-export const Experience = () => {
-  const { MODEL, objSelected } = useConfigurator(); // Force rerender the stage & shadows
 
-  /*   const { position, color, visible } = useControls({
-    position: {
-      value: { x: 2, y: 0 },
-      step: 0.01,
-      joystick: "invertY",
-    },
-    color: "rgb(172, 190, 232)",
-    visible: true
-  }); */
+export const Experience = () => {
+  const { MODEL, objSelected } = useConfigurator();
   return (
     <Suspense fallback={<Loader />}>
       <Stage

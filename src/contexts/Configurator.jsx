@@ -13,7 +13,7 @@ import { LevelerFeet } from "../components/models/legs/LevelerFeet";
 const ConfiguratorContext = createContext();
 
 export const ConfiguratorProvider = ({ children }) => {
-  const [objSelected, setObjSelected] = useState(null);
+  const [objSelected, setObjSelected] = useState(false);
   const [dutyVisibility, setDutyVisibility] = useState(true);
   const [esdVisibility, setEsdVisibility] = useState(false);
   const [esdwoodVisibility, setEsdwoodVisibility] = useState(false);

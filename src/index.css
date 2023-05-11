@@ -25,3 +25,7 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+#leva__root > div {
+  right: 280px;
+  top: 280px;
+}
